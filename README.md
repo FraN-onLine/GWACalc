@@ -13,3 +13,5 @@ CREATE TABLE subjects (
 
 make sure to set user and pass on the program  
 life is better without pathfit
+
+![image](https://github.com/user-attachments/assets/87a1888d-5532-48ba-a464-44fcea24ec75)
