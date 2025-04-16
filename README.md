@@ -16,6 +16,8 @@ life is better without pathfit
 
 # Sample
 ![image](https://github.com/user-attachments/assets/87a1888d-5532-48ba-a464-44fcea24ec75)
+![image](https://github.com/user-attachments/assets/0ab54f6c-5290-40c7-81c6-e3465bd37a53)
+
 
 # Life is Better Without Pathfit  
 Hello Ma'am ALLONA FUCKING VILLALOBOS YOU FUCKING PIECE OF SHIT CONDASCENDING FUCKING SHIT INSTRUCTOR  
