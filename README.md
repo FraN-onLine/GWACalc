@@ -1,3 +1,4 @@
+# Before Running!
 run on sql ->  
 CREATE DATABASE gwa_db;  
 
@@ -10,6 +11,8 @@ CREATE TABLE subjects (
     gwa FLOAT NOT NULL,  
     included BOOLEAN DEFAULT TRUE  
 );  
+
+too lazy to work on it further so just run it at xampp/htdocs/(folder)/index.php, start both apache and mysql at xampp control then open at localhost/(folder)/index.php
 
 make sure to set user and pass on the program  
 life is better without pathfit
