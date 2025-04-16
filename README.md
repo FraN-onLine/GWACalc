@@ -9,7 +9,8 @@ CREATE TABLE subjects (
     name VARCHAR(100) NOT NULL,  
     units INT NOT NULL,  
     gwa FLOAT NOT NULL,  
-    included BOOLEAN DEFAULT TRUE  
+    included BOOLEAN DEFAULT TRUE,  
+    tag VARCHAR(50) DEFAULT ''
 );  
 
 too lazy to work on it further so just run it at xampp/htdocs/(folder)/index.php, start both apache and mysql at xampp control then open at localhost/(folder)/index.php
