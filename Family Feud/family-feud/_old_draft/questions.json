@@ -1,0 +1,59 @@
+{
+  "teams": [
+    "DCS",
+    "DIT"
+  ],
+
+  "settings": {
+    "guesses_per_round": 10,
+    "seconds_per_guess": 5,
+    "alternate_teams": true
+  },
+
+  "rounds": [
+    {
+      "name": "Round 1",
+      "question": "What is something students commonly do before an exam?",
+      "answers": [
+        { "text": "Review", "points": 35 },
+        { "text": "Sleep", "points": 25 },
+        { "text": "Cram", "points": 20 },
+        { "text": "Eat", "points": 10 },
+        { "text": "Pray", "points": 10 }
+      ]
+    },
+
+    {
+      "name": "Round 2",
+      "question": "What is something a teacher commonly says in class?",
+      "answers": [
+        { "text": "Any questions?", "points": 30 },
+        { "text": "Take your seats", "points": 25 },
+        { "text": "Listen", "points": 20 },
+        { "text": "Submit your work", "points": 15 },
+        { "text": "Good morning", "points": 10 }
+      ]
+    },
+
+    {
+      "name": "Round 3",
+      "question": "What is something students do when the teacher leaves the room?",
+      "answers": [
+        { "text": "Talk", "points": 35 },
+        { "text": "Use their phones", "points": 30 },
+        { "text": "Play", "points": 15 },
+        { "text": "Sleep", "points": 10 },
+        { "text": "Eat", "points": 10 }
+      ]
+    }
+  ],
+
+  "tie_breaker": {
+    "question": "What is the first thing students do when class ends?",
+    "answers": [
+      { "text": "Leave", "points": 50 },
+      { "text": "Use their phones", "points": 30 },
+      { "text": "Talk", "points": 20 }
+    ]
+  }
+}
