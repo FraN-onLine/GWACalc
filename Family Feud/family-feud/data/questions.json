@@ -1,0 +1,179 @@
+{
+	"_readme": "One entry in 'rounds' = one board = one round of the game. You can also edit all of this from the in-game SETUP panel (add / remove questions, set answers and points) - it saves back into this file. Points should add up to 100, like a real Family Feud survey.",
+	"rounds": [
+		{
+			"answers": [
+				{
+					"points": 30,
+					"text": "Syntax"
+				},
+				{
+					"points": 24,
+					"text": "Semicolon"
+				},
+				{
+					"points": 14,
+					"text": "Kinuha sa ChatGPT"
+				},
+				{
+					"points": 10,
+					"text": "Wrong Spelling / Typo"
+				},
+				{
+					"points": 8,
+					"text": "Incompetence"
+				},
+				{
+					"points": 6,
+					"text": "Mahina Net"
+				},
+				{
+					"points": 4,
+					"text": "Wrong Logic"
+				},
+				{
+					"points": 4,
+					"text": "Kinopya sa Katabi"
+				}
+			],
+			"name": "Round 1",
+			"question": "Mga rason kung bakit hindi nag-ruruncode?"
+		},
+		{
+			"answers": [
+				{
+					"points": 25,
+					"text": "Pera"
+				},
+				{
+					"points": 18,
+					"text": "Demand"
+				},
+				{
+					"points": 15,
+					"text": "Game Development"
+				},
+				{
+					"points": 15,
+					"text": "No Choice"
+				},
+				{
+					"points": 9,
+					"text": "Curiosity"
+				},
+				{
+					"points": 6,
+					"text": "Flexible"
+				},
+				{
+					"points": 6,
+					"text": "Aircon"
+				},
+				{
+					"points": 6,
+					"text": "Kasi Gusto ko Lang"
+				}
+			],
+			"name": "Round 2",
+			"question": "Mga rasons kung bakit nag CS/IT ka?"
+		},
+		{
+			"answers": [
+				{
+					"points": 32,
+					"text": "Math Courses (Precal / Linear Algebra / Discrete Structures / Quantitative Methods)"
+				},
+				{
+					"points": 21,
+					"text": "Computer Programming / Programming Courses"
+				},
+				{
+					"points": 13,
+					"text": "Computer Organization and Assembly Language"
+				},
+				{
+					"points": 10,
+					"text": "Web Development"
+				},
+				{
+					"points": 8,
+					"text": "Object Oriented Programming"
+				},
+				{
+					"points": 5,
+					"text": "Computer Networks / Distributed Systems"
+				},
+				{
+					"points": 5,
+					"text": "Automata Theory and Formal Languages"
+				},
+				{
+					"points": 5,
+					"text": "Data Structures and Algorithms"
+				}
+			],
+			"name": "Round 3",
+			"question": "Mga IT/CS course na kadalasang iniiyakan ng mga estudyante?"
+		},
+		{
+			"answers": [
+				{
+					"points": 32,
+					"text": "Traffic"
+				},
+				{
+					"points": 20,
+					"text": "Tulog Pa/ Late Nagising"
+				},
+				{
+					"points": 18,
+					"text": "Mahal ang Gas"
+				},
+				{
+					"points": 10,
+					"text": "Layo from School"
+				},
+				{
+					"points": 9,
+					"text": "Walang Masasakyan"
+				},
+				{
+					"points": 5,
+					"text": "Weather"
+				},
+				{
+					"points": 3,
+					"text": "Nagluluto pa"
+				},
+				{
+					"points": 3,
+					"text": "Di pa nakaligo"
+				}
+			],
+			"name": "Round 4",
+			"question": "Mga Rason Kung Bakit Late Ka?"
+		}
+	],
+	"tie_breaker": {
+		"answers": [
+			{
+				"points": 40,
+				"text": "Naiwala na ako sa logic"
+			},
+			{
+				"points": 30,
+				"text": "Coding hanggang katapus"
+			},
+			{
+				"points": 18,
+				"text": "Kinuha ko sa ChatGPT ulit"
+			},
+			{
+				"points": 12,
+				"text": "Babalik na ako sa board exam"
+			}
+		],
+		"name": "Tie-Breaker",
+		"question": "Ano ang pinaka-typical na ikaw pa rin kapag naka-program ka na?"
+	}
+}

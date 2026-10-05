@@ -1,0 +1,438 @@
+[gd_scene format=3 uid="uid://8lve5jephyx2"]
+
+[ext_resource type="Script" uid="uid://b4ggm8hefvvnv" path="res://scripts/game_screen.gd" id="1_game"]
+[ext_resource type="FontFile" uid="uid://bgrgca3qc6dxo" path="res://Fonts/Silkscreen-Regular.ttf" id="2_gj13t"]
+[ext_resource type="Texture2D" uid="uid://tju1e18sxem" path="res://Assets/logo.png" id="2_osnef"]
+[ext_resource type="Texture2D" uid="uid://dcr0iumessj4p" path="res://Assets/CCIS-Logo.png" id="4_i1jb3"]
+
+[sub_resource type="StyleBoxFlat" id="BreakPanelStyle"]
+bg_color = Color(0.054902, 0.0862745, 0.172549, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.945098, 0.768627, 0.054902, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 10
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="BreakTeamAStyle"]
+bg_color = Color(0.0745098, 0.129412, 0.25098, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.305882, 0.639216, 1, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="BreakTeamBStyle"]
+bg_color = Color(0.156863, 0.105882, 0.0901961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.541176, 0.360784, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[node name="GameScreen" type="Control" unique_id=1121406873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_game")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1225997305]
+position = Vector2(711, 28.999992)
+scale = Vector2(0.06282247, 0.060520884)
+texture = ExtResource("2_osnef")
+
+[node name="Layout" type="MarginContainer" parent="." unique_id=708993216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="Layout" unique_id=1599328431]
+layout_mode = 2
+theme_override_constants/separation = 12
+metadata/_edit_lock_ = true
+
+[node name="TopBar" type="HBoxContainer" parent="Layout/VBox" unique_id=1001412463]
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TeamAPanel" type="PanelContainer" parent="Layout/VBox/TopBar" unique_id=1571418409]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="Layout/VBox/TopBar/TeamAPanel" unique_id=1572604519]
+layout_mode = 2
+alignment = 1
+
+[node name="TeamAName" type="Label" parent="Layout/VBox/TopBar/TeamAPanel/VBox" unique_id=1824852921]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.305882, 0.639216, 1, 1)
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 26
+text = "DCS"
+horizontal_alignment = 1
+
+[node name="TeamAScore" type="Label" parent="Layout/VBox/TopBar/TeamAPanel/VBox" unique_id=1195431689]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 56
+text = "0"
+horizontal_alignment = 1
+
+[node name="Center" type="VBoxContainer" parent="Layout/VBox/TopBar" unique_id=821030622]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.4
+theme_override_constants/separation = 6
+
+[node name="RoundLabel" type="Label" parent="Layout/VBox/TopBar/Center" unique_id=1304551885]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 20
+text = "ROUND 1"
+horizontal_alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="Layout/VBox/TopBar/Center" unique_id=1686523351]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TurnLabel" type="Label" parent="Layout/VBox/TopBar/Center" unique_id=805673706]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 26
+text = "ANSWERING: ---"
+horizontal_alignment = 1
+
+[node name="CcisLogo" type="Sprite2D" parent="Layout/VBox/TopBar/Center" unique_id=1398586804]
+position = Vector2(500, 14)
+scale = Vector2(0.09852944, 0.098769896)
+texture = ExtResource("4_i1jb3")
+
+[node name="TeamBPanel" type="PanelContainer" parent="Layout/VBox/TopBar" unique_id=1618271705]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="Layout/VBox/TopBar/TeamBPanel" unique_id=840598126]
+layout_mode = 2
+alignment = 1
+
+[node name="TeamBName" type="Label" parent="Layout/VBox/TopBar/TeamBPanel/VBox" unique_id=227055082]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.541176, 0.360784, 1)
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 26
+text = "DIT"
+horizontal_alignment = 1
+
+[node name="TeamBScore" type="Label" parent="Layout/VBox/TopBar/TeamBPanel/VBox" unique_id=1022985656]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 56
+text = "0"
+horizontal_alignment = 1
+
+[node name="InfoBar" type="HBoxContainer" parent="Layout/VBox" unique_id=1760246618]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AnswerCaption" type="Label" parent="Layout/VBox/InfoBar" unique_id=1202964759]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 15
+text = "ANSWERING:"
+
+[node name="TeamAButton" type="Button" parent="Layout/VBox/InfoBar" unique_id=1531576933]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 46)
+layout_mode = 2
+
+[node name="TeamBButton" type="Button" parent="Layout/VBox/InfoBar" unique_id=1651074872]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 46)
+layout_mode = 2
+
+[node name="TimerCaption" type="Label" parent="Layout/VBox/InfoBar" unique_id=1248324300]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 15
+text = "TIME"
+
+[node name="TimerLabel" type="Label" parent="Layout/VBox/InfoBar" unique_id=1963653850]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_font_sizes/font_size = 30
+text = "--"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Layout/VBox/InfoBar" unique_id=1272915286]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StrikeLabel" type="Label" parent="Layout/VBox/InfoBar" unique_id=912916451]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.419608, 0.419608, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="GuessesLabel" type="Label" parent="Layout/VBox/InfoBar" unique_id=1903933548]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 22
+text = "GUESSES: 0 / 10"
+horizontal_alignment = 2
+
+[node name="Board" type="ScrollContainer" parent="Layout/VBox" unique_id=75054907]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="AnswerGrid" type="GridContainer" parent="Layout/VBox/Board" unique_id=996255466]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 14
+columns = 2
+
+[node name="Controls" type="HBoxContainer" parent="Layout/VBox" unique_id=1600473245]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StatusLabel" type="Label" parent="Layout/VBox/Controls" unique_id=2028929792]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 16
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MissButton" type="Button" parent="Layout/VBox/Controls" unique_id=300246274]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.780392, 0.780392, 1)
+theme_override_font_sizes/font_size = 19
+text = "WRONG ANSWER  ✖"
+
+[node name="SkipButton" type="Button" parent="Layout/VBox/Controls" unique_id=1616907768]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "END ROUND"
+
+[node name="RevealButton" type="Button" parent="Layout/VBox/Controls" unique_id=1152927076]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.239216, 0.309804, 1)
+theme_override_font_sizes/font_size = 19
+text = "REVEAL ONE  ▶"
+
+[node name="MenuButton" type="Button" parent="Layout/VBox/Controls" unique_id=289868393]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 15
+text = "⚙  SETUP  (ESC)"
+
+[node name="RoundBreak" type="Control" parent="." unique_id=1791993199]
+unique_name_in_owner = true
+visible = false
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="ColorRect" parent="RoundBreak" unique_id=178573303]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17241547, 0.21323046, 0.32891575, 0.9411765)
+
+[node name="Center" type="CenterContainer" parent="RoundBreak" unique_id=1755361783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="RoundBreak/Center" unique_id=1131738990]
+custom_minimum_size = Vector2(1000, 640)
+layout_mode = 2
+theme_override_styles/panel = SubResource("BreakPanelStyle")
+
+[node name="Margin" type="MarginContainer" parent="RoundBreak/Center/Panel" unique_id=448730106]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 40
+
+[node name="VBox" type="VBoxContainer" parent="RoundBreak/Center/Panel/Margin" unique_id=1187020074]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="BreakTitle" type="Label" parent="RoundBreak/Center/Panel/Margin/VBox" unique_id=1335679661]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 36
+text = "ROUND 1 COMPLETE"
+horizontal_alignment = 1
+
+[node name="TeamsRow" type="HBoxContainer" parent="RoundBreak/Center/Panel/Margin/VBox" unique_id=2143908650]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="BreakTeamAPanel" type="PanelContainer" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow" unique_id=2113384997]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("BreakTeamAStyle")
+
+[node name="VBox" type="VBoxContainer" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow/BreakTeamAPanel" unique_id=1084920057]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BreakTeamAName" type="Label" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow/BreakTeamAPanel/VBox" unique_id=1073466582]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.305882, 0.639216, 1, 1)
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 34
+text = "DCS"
+horizontal_alignment = 1
+
+[node name="BreakTeamAScore" type="Label" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow/BreakTeamAPanel/VBox" unique_id=1063583776]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+
+[node name="BreakTeamBPanel" type="PanelContainer" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow" unique_id=990874303]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("BreakTeamBStyle")
+
+[node name="VBox" type="VBoxContainer" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow/BreakTeamBPanel" unique_id=1313879507]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BreakTeamBName" type="Label" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow/BreakTeamBPanel/VBox" unique_id=1104502376]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.541176, 0.360784, 1)
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 34
+text = "DIT"
+horizontal_alignment = 1
+
+[node name="BreakTeamBScore" type="Label" parent="RoundBreak/Center/Panel/Margin/VBox/TeamsRow/BreakTeamBPanel/VBox" unique_id=1481910003]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gj13t")
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+
+[node name="BreakNextButton" type="Button" parent="RoundBreak/Center/Panel/Margin/VBox" unique_id=813572424]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "NEXT QUESTION  ▶"
+
+[node name="StrikeX" type="CenterContainer" parent="." unique_id=45126798]
+unique_name_in_owner = true
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StrikeXLabel" type="Label" parent="StrikeX" unique_id=1707392299]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.231373, 0.188235, 1)
+theme_override_colors/font_outline_color = Color(0.0352941, 0.0431373, 0.0784314, 1)
+theme_override_constants/outline_size = 26
+theme_override_font_sizes/font_size = 320
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnTimer" type="Timer" parent="." unique_id=1229920174]
+unique_name_in_owner = true
+wait_time = 5.0

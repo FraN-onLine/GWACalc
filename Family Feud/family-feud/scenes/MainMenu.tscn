@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://ctpphnxpi504s"]
+
+[ext_resource type="Script" uid="uid://bola01y0ob574" path="res://scripts/main_menu.gd" id="1_menu"]
+
+[sub_resource type="StyleBoxFlat" id="Scrim"]
+bg_color = Color(0.0196078, 0.0313726, 0.0666667, 0.9)
+
+[node name="MainMenu" type="Control" unique_id=135687106]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Center" type="CenterContainer" parent="." unique_id=252497942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=1117967912]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/VBox" unique_id=1425003599]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_font_sizes/font_size = 92
+text = "FAMILY FEUD"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/VBox" unique_id=296940953]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.305882, 0.639216, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "CCIS EDITION"
+horizontal_alignment = 1
+
+[node name="MatchupLabel" type="Label" parent="Center/VBox" unique_id=2120108491]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 21
+text = "DCS   vs   DIT"
+horizontal_alignment = 1
+
+[node name="Gap" type="Control" parent="Center/VBox" unique_id=1387653712]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Center/VBox" unique_id=1351127401]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 82)
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "▶   START A GAME"
+
+[node name="HelpButton" type="Button" parent="Center/VBox" unique_id=998633181]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "❓   HOW TO PLAY"
+
+[node name="QuitButton" type="Button" parent="Center/VBox" unique_id=1940688166]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 20
+text = "✕   QUIT"
+
+[node name="Hint" type="Label" parent="Center/VBox" unique_id=486839350]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 15
+text = "START A GAME opens Game Setup, where you tick the questions to play."
+horizontal_alignment = 1
+
+[node name="HelpOverlay" type="Control" parent="." unique_id=608705997]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scrim" type="Panel" parent="HelpOverlay" unique_id=1310244675]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Scrim")
+
+[node name="Center" type="CenterContainer" parent="HelpOverlay" unique_id=650425304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="HelpOverlay/Center" unique_id=762969106]
+custom_minimum_size = Vector2(1180, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="HelpOverlay/Center/Panel" unique_id=1625442936]
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 42
+theme_override_constants/margin_bottom = 30
+
+[node name="VBox" type="VBoxContainer" parent="HelpOverlay/Center/Panel/Margin" unique_id=717984835]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HelpTitle" type="Label" parent="HelpOverlay/Center/Panel/Margin/VBox" unique_id=745790479]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_font_sizes/font_size = 30
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="HelpOverlay/Center/Panel/Margin/VBox" unique_id=2127838913]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "RUNNING THE SHOW
+
+•  One question is shown at a time with its answers hidden. Click an answer card when a team guesses it right: the points go to the answering team and the turn passes.
+•  WRONG ANSWER  ✖  gives a strike and stamps a huge ✖ over the board. Three strikes in a row pass the turn. The ANSWERING buttons hand the turn over by hand.
+•  END ROUND closes the board early. REVEAL ONE  ▶  then flips the leftovers one at a time. Between boards a score panel shows both teams' totals - press NEXT QUESTION  ▶  (or SEE RESULTS  ▶  on the last one) to continue.
+•  The highest total after the last board wins. If the totals are level, the tie-breaker board decides it.
+
+BEFORE YOU START
+
+•  START A GAME opens Game Setup: tick the questions to play, rename the teams and change the rules. Those are saved for next time.
+•  ESC anywhere inside the game brings the setup panel back up."
+autowrap_mode = 3
+
+[node name="HelpCloseButton" type="Button" parent="HelpOverlay/Center/Panel/Margin/VBox" unique_id=1140079711]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "GOT IT"
+
+[connection signal="pressed" from="Center/VBox/PlayButton" to="." method="_on_play_button_pressed"]

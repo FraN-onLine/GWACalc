@@ -1,0 +1,21 @@
+{
+	"_readme": "Team names + default rules. Anything you omit here falls back to DEFAULT_RULES in scripts/game_data.gd. Everything is editable in the Setup screen too - this file only sets the DEFAULTS.",
+	"_rules": {
+		"answer_columns": "0 = pick automatically from the number of answers on the board.",
+		"first_round_starter": "0 = first team listed always, 1 = second team always, 2 = alternate every round.",
+		"guesses_per_round": "How many guesses a team gets on one board before the round is forced to end.",
+		"seconds_per_guess": "Countdown per turn. Set to 0 to switch the timer off.",
+		"strikes_per_turn": "Wrong answers in a row before the turn is handed to the other team.",
+		"tie_breaker_enabled": "When true, a tie after the last round is settled with the tie-breaker board."
+	},
+	"answer_columns": 3,
+	"first_round_starter": 2,
+	"guesses_per_round": 10,
+	"seconds_per_guess": 0,
+	"strikes_per_turn": 1,
+	"teams": [
+		"DCS",
+		"DIT"
+	],
+	"tie_breaker_enabled": false
+}

@@ -1,0 +1,144 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/question_editor.gd" id="1_editor"]
+
+[sub_resource type="StyleBoxFlat" id="Scrim"]
+bg_color = Color(0.0196078, 0.0313726, 0.0666667, 0.85)
+
+[node name="QuestionEditor" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_editor")
+
+[node name="Scrim" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Scrim")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(940, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 26
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="EditorTitle" type="Label" parent="Center/Panel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_font_sizes/font_size = 26
+text = "EDIT QUESTION"
+
+[node name="NameCaption" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "NAME SHOWN ON THE SCOREBOARD"
+
+[node name="NameEdit" type="LineEdit" parent="Center/Panel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+placeholder_text = "Question 1"
+
+[node name="QuestionCaption" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "QUESTION"
+
+[node name="QuestionEdit" type="LineEdit" parent="Center/Panel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+placeholder_text = "Itanong ang mga mag-aaral..."
+
+[node name="AnswersHead" type="HBoxContainer" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="AnswersCaption" type="Label" parent="Center/Panel/Margin/VBox/AnswersHead"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "ANSWERS AND POINTS"
+
+[node name="TotalLabel" type="Label" parent="Center/Panel/Margin/VBox/AnswersHead"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.560784, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = ""
+
+[node name="Scroll" type="ScrollContainer" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="AnswerRows" type="VBoxContainer" parent="Center/Panel/Margin/VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="AddAnswerButton" type="Button" parent="Center/Panel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+ ADD ANOTHER ANSWER"
+
+[node name="EditorStatus" type="Label" parent="Center/Panel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.560784, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = ""
+
+[node name="Buttons" type="HBoxContainer" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 16
+
+[node name="SaveButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SAVE QUESTION"
+
+[node name="CancelButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "CANCEL"

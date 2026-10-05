@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://b4avs78ji3jsc"]
+
+[ext_resource type="Script" uid="uid://ouvesdgrrfw1" path="res://scripts/result_screen.gd" id="1_result"]
+[ext_resource type="FontFile" uid="uid://bgrgca3qc6dxo" path="res://Fonts/Silkscreen-Regular.ttf" id="2_8aox7"]
+
+[node name="ResultScreen" type="Control" unique_id=423357842]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_result")
+
+[node name="Center" type="CenterContainer" parent="." unique_id=424271956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center" unique_id=2020679740]
+custom_minimum_size = Vector2(1010, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel" unique_id=290956409]
+layout_mode = 2
+theme_override_constants/margin_left = 46
+theme_override_constants/margin_top = 38
+theme_override_constants/margin_right = 46
+theme_override_constants/margin_bottom = 38
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin" unique_id=289898838]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Center/Panel/Margin/VBox" unique_id=34691913]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_fonts/font = ExtResource("2_8aox7")
+theme_override_font_sizes/font_size = 54
+text = "WINNER!"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Panel/Margin/VBox" unique_id=1019935187]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 19
+horizontal_alignment = 1
+
+[node name="Separator" type="ColorRect" parent="Center/Panel/Margin/VBox" unique_id=447096030]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.172549, 0.290196, 0.501961, 1)
+
+[node name="Scores" type="Label" parent="Center/Panel/Margin/VBox" unique_id=254902311]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+
+[node name="Breakdown" type="Label" parent="Center/Panel/Margin/VBox" unique_id=1987851674]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.705882, 0.815686, 1)
+theme_override_font_sizes/font_size = 17
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Center/Panel/Margin/VBox" unique_id=1804415204]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons" unique_id=1665884458]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "↺  PLAY AGAIN"
+
+[node name="SetupButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons" unique_id=1247265814]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "⚙  GAME SETUP"
+
+[node name="MenuButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons" unique_id=278946535]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "⌂  MAIN MENU"

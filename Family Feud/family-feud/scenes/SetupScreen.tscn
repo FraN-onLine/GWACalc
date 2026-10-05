@@ -1,0 +1,403 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/setup_screen.gd" id="1_setup"]
+[ext_resource type="PackedScene" path="res://scenes/QuestionEditor.tscn" id="2_editor"]
+
+[node name="SetupScreen" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_setup")
+
+[node name="Layout" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="Layout/VBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Layout/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_font_sizes/font_size = 26
+text = "GAME SETUP"
+vertical_alignment = 1
+
+[node name="SummaryLabel" type="Label" parent="Layout/VBox/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.560784, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = ""
+vertical_alignment = 1
+
+[node name="HeaderLine" type="ColorRect" parent="Layout/VBox"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.172549, 0.290196, 0.501961, 1)
+
+[node name="Body" type="HBoxContainer" parent="Layout/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="BankPanel" type="PanelContainer" parent="Layout/VBox/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.9
+
+[node name="Margin" type="MarginContainer" parent="Layout/VBox/Body/BankPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Layout/VBox/Body/BankPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="Layout/VBox/Body/BankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_font_sizes/font_size = 18
+text = "QUESTION BANK"
+
+[node name="Hint" type="Label" parent="Layout/VBox/Body/BankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 13
+text = "Tick the questions to play. They run in this order and the points carry over between them."
+autowrap_mode = 3
+
+[node name="BankTools" type="HBoxContainer" parent="Layout/VBox/Body/BankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SelectAllButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/BankTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "✓  SELECT ALL"
+
+[node name="SelectNoneButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/BankTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "✕  SELECT NONE"
+
+[node name="ListScroll" type="ScrollContainer" parent="Layout/VBox/Body/BankPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="QuestionList" type="VBoxContainer" parent="Layout/VBox/Body/BankPanel/Margin/VBox/ListScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="SelectionLabel" type="Label" parent="Layout/VBox/Body/BankPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.560784, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = ""
+clip_text = true
+
+[node name="EditTools" type="HBoxContainer" parent="Layout/VBox/Body/BankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AddQuestionButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/EditTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.6
+theme_override_colors/font_color = Color(0.85, 1, 0.85, 1)
+theme_override_font_sizes/font_size = 15
+text = "＋  NEW QUESTION"
+
+[node name="EditQuestionButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/EditTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "✎  EDIT"
+
+[node name="DuplicateQuestionButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/EditTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "⧉  COPY"
+
+[node name="MoveUpButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/EditTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 40)
+layout_mode = 2
+tooltip_text = "Move the selected question up the running order"
+theme_override_font_sizes/font_size = 15
+text = "▲"
+
+[node name="MoveDownButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/EditTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 40)
+layout_mode = 2
+tooltip_text = "Move the selected question down the running order"
+theme_override_font_sizes/font_size = 15
+text = "▼"
+
+[node name="DeleteQuestionButton" type="Button" parent="Layout/VBox/Body/BankPanel/Margin/VBox/EditTools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.74, 0.74, 1)
+theme_override_font_sizes/font_size = 15
+text = "🗑  DELETE"
+
+[node name="SettingsPanel" type="PanelContainer" parent="Layout/VBox/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="Layout/VBox/Body/SettingsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Layout/VBox/Body/SettingsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.768627, 0.054902, 1)
+theme_override_font_sizes/font_size = 18
+text = "TEAMS & RULES"
+
+[node name="TeamsCaption" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 13
+text = "TEAM NAMES  (remembered for next time)"
+
+[node name="TeamRow" type="HBoxContainer" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TeamAEdit" type="LineEdit" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/TeamRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Team 1"
+
+[node name="VsLabel" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/TeamRow"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 14
+text = "vs"
+
+[node name="TeamBEdit" type="LineEdit" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/TeamRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Team 2"
+
+[node name="RulesCaption" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 13
+text = "ROUND RULES"
+
+[node name="RulesGrid" type="GridContainer" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="GuessesLabel" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "Guesses per round"
+
+[node name="GuessesSpin" type="SpinBox" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20.0
+value = 10.0
+select_all_on_focus = true
+
+[node name="StrikesLabel" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "Strikes per turn"
+
+[node name="StrikesSpin" type="SpinBox" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 6.0
+value = 3.0
+select_all_on_focus = true
+
+[node name="SecondsLabel" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "Seconds per guess"
+
+[node name="SecondsSpin" type="SpinBox" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 60.0
+suffix = " s"
+select_all_on_focus = true
+
+[node name="ColumnsLabel" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "Board columns"
+
+[node name="ColumnsSpin" type="SpinBox" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 4.0
+select_all_on_focus = true
+
+[node name="StarterLabel" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "First to answer"
+
+[node name="StarterOption" type="OptionButton" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TieLabel" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.784314, 0.839216, 0.945098, 1)
+theme_override_font_sizes/font_size = 15
+text = "Tie-breaker"
+
+[node name="TieCheck" type="CheckButton" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox/RulesGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+button_pressed = true
+theme_override_font_sizes/font_size = 15
+text = "Sudden death if tied"
+
+[node name="RulesHint" type="Label" parent="Layout/VBox/Body/SettingsPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.556863, 0.607843, 0.717647, 1)
+theme_override_font_sizes/font_size = 12
+text = "0 seconds turns the timer off.
+
+0 columns picks the layout from the number of answers.
+
+The tie-breaker is only played when the totals are level after the last question."
+autowrap_mode = 3
+vertical_alignment = 0
+
+[node name="StatusLabel" type="Label" parent="Layout/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.560784, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = ""
+
+[node name="Footer" type="HBoxContainer" parent="Layout/VBox"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BackButton" type="Button" parent="Layout/VBox/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "←  MAIN MENU"
+
+[node name="FooterGap" type="Control" parent="Layout/VBox/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StartButton" type="Button" parent="Layout/VBox/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "▶  START GAME"
+
+[node name="QuestionEditor" parent="." instance=ExtResource("2_editor")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="DeleteConfirm" type="ConfirmationDialog" parent="."]
+title = "Delete question"
+position = Vector2i(560, 380)
+size = Vector2i(480, 150)
+ok_button_text = "Delete"
+dialog_text = "Delete this question from the bank? This cannot be undone."
+
+
+
